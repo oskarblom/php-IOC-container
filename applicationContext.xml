@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+
+	<object name="customerService" type="CustomerServiceImpl">
+		<constructor-arg ref="employeeService" />
+	</object>
+
+	<object name="employeeService" type="EmployeeServiceImpl">
+		<property name="departmentService" ref="departmentService" />
+	</object>
+	
+	<object name="departmentService" type="DepartmentServiceImpl" />
+	
+	<object name="birthdayService" type="BirthdayServiceImpl">
+		<property name="child" ref="child" />
+	</object>
+	
+	<object name="child" type="MaleChild" />
+	
+</objects>
